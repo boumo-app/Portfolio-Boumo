@@ -1,0 +1,579 @@
+/* Reset & Base Variables */
+:root {
+    --bg-color: #0B0C10;      /* Dark background close to image */
+    --card-bg: #11151C;       /* Slightly lighter for cards/hovers */
+    --text-primary: #FFFFFF;
+    --text-secondary: #9CA3AF;
+    --accent-color: #66FCF1;  /* The Cyan/Teal color */
+    --accent-dark: #45A29E;
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.accent {
+    color: var(--accent-color);
+    
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.square-outline {
+    width: 300px;
+    height: 300px;
+    border: 2px solid var(--accent-color);
+    
+    position: relative;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
+    overflow: hidden  /* ; مهم حتى لا تخرج الصورة خارج الإطار */
+    
+}
+
+.square-outline:hover {
+   transform: translateY(-5px);
+    transition: 0.3s ease;
+    
+}
+
+.square-outline::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    background-image: url("Morad_Bouzghiba-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 50%;
+    filter: grayscale(100%); /* الآن سيؤثر على الصورة فقط */
+    
+}
+
+
+.code-icon {
+    position: absolute;
+    bottom: -5px;
+    right: 5px;
+    
+    padding-top: 0px;
+    margin-top: 0px;
+    color: var(--accent-color);
+    font-size: 2rem;
+}
+
+.hero-text {
+    flex: 2;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+   
+}
+
+.role-title {
+    font-size: 2rem;
+    
+    /* Gradient Background */
+    background: -webkit-linear-gradient(#fff, #555); 
+    background: linear-gradient(#fff, #555); /* Standard syntax added */
+    
+    /* Background Clip */
+    background-clip: text;           /* Standard property added here */
+    -webkit-background-clip: text;   /* Vendor prefix for Safari/Chrome */
+    
+    /* Text Fill */
+    -webkit-text-fill-color: transparent;
+    
+    margin-bottom: 1.5rem;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Marquee Section */
+.marquee-container {
+    background-color: #12161D;
+    padding: 1.5rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    margin: 3rem 0;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+    
+}
+
+.marquee-content span {
+    margin-right: 2rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding-right: 5%;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Generic Section Styles */
+.section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* About Section */
+.about-grid {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.gradient-square {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #66FCF1 0%, #45A29E 100%);
+    position: relative;
+}
+
+/* The dark diagonal stripe effect behind square */
+.gradient-square::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1B1F24;
+    top: 20px;
+    left: 20px;
+    z-index: -1;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content .light-text {
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.about-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Experience Section */
+.experience-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.exp-item {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.exp-date {
+    min-width: 150px;
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    padding-top: 5px;
+}
+
+.exp-details {
+    border-left: 1px solid #333;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+.exp-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow-icon {
+    font-size: 0.7rem;
+    transform: rotate(-45deg);
+    color: var(--text-secondary);
+}
+
+.exp-details p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Formation Section */
+.formation-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.formation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #1F2937;
+}
+
+.course-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Colors for icons matching image */
+.purple { background-color: #8B5CF6; }
+.orange { background-color: #F97316; }
+.blue { background-color: #3B82F6; }
+.yellow { background-color: #EAB308; color: #000; }
+.orange-dark { background-color: #EA580C; }
+
+.formation-item h4 {
+    font-size: 1rem;
+}
+
+.course-meta {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.course-meta .hours {
+    margin-left: 15px;
+    color: var(--text-primary);
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    border: 1px solid #333;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(102, 252, 241, 0.05);
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.contact-card i {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    border-top: 1px solid #1F2937;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-container { flex-direction: column; text-align: center; }
+    .about-grid { flex-direction: column; }
+    .experience-list { padding: 0 10px; }
+    .exp-item { flex-direction: column; gap: 0.5rem; }
+    .exp-details { border-left: none; padding-left: 0; padding-bottom: 1rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+
+
+
+/* ===========================
+   Contact Form Styles
+   =========================== */
+
+.form-container {
+    max-width: 700px;
+    margin: 3rem auto 0; /* Spacing from social grid */
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Input & Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background-color: var(--bg-color); /* Darker background for contrast */
+    border: 1px solid #333;
+    padding: 1rem;
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Focus Effect - The Cyan Glow */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(102, 252, 241, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px;
+}
+
+/* Submit Button Styling */
+.btn-submit {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0.5rem;
+    font-family: var(--font-main);
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Dark text on cyan background */
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+    }
+}
+
+
+
+
+/* navbar responsive */
+
+/* Navbar */
+.navbar {
+    padding: 2rem 0;
+    background-color: var(--bg-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* زر القائمة المنسدلة (مخفي على الشاشات الكبيرة) */
+.hamburger {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+}
+
+/* ---------------------- */
+/* RESPONSIVE */
+/* ---------------------- */
+
+@media (max-width: 768px) {
+
+    /* إخفاء الروابط على الهاتف */
+    nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #222;
+        width: 180px;
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        border-left: 2px solid #444;
+        border-bottom: 2px solid #444;
+    }
+
+    /* إظهار القائمة عند إضافة كلاس "active" */
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    /* إظهار زر الهمبرغر */
+    .hamburger {
+        display: block;
+    }
+}
