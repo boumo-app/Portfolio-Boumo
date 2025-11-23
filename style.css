@@ -585,11 +585,8 @@ footer {
 
 
 
-/* ====== Technologies marquee (compatible with your root vars) ====== */
+/* ====== Skills  (compatible with your root vars) ====== */
 
-/* Use your defined variables from style.css:
-   --bg-color, --card-bg, --text-primary, --accent-color, --font-main
-*/
 
 ._section_1lxj7_3 {
   color: var(--text-primary);
@@ -665,7 +662,7 @@ footer {
 
 ._techItem_1lxj7_68:hover {
   border-color: var(--accent-color);
-  background: linear-gradient(135deg, var(--accent-color), rgba(70,160,160,0.2));
+  background: linear-gradient(135deg, var(--accent-color), rgba(26, 27, 25, 0.2));
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
   z-index: 10;
