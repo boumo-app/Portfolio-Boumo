@@ -585,6 +585,145 @@ footer {
 
 
 
+/* ====== Technologies marquee (compatible with your root vars) ====== */
+
+/* Use your defined variables from style.css:
+   --bg-color, --card-bg, --text-primary, --accent-color, --font-main
+*/
+
+._section_1lxj7_3 {
+  color: var(--text-primary);
+  margin-top: 3.5rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+._title_1lxj7_10 {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+._container_1lxj7_19 {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 50%, var(--bg-color) 100%);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  position: relative;
+}
+
+._container_1lxj7_19:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(87,108,188,0.03) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+._scrollContainer_1lxj7_40 {
+  width: 100%;
+  overflow: visible;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+._scrollTrack_1lxj7_59 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  animation: _scroll_1lxj7_40 20s linear infinite;
+  width: max-content;
+  padding: 0.5rem 0;
+}
+
+/* container for one sequence */
+._items { display:flex; gap: 2rem; align-items:center; }
+
+/* item styles */
+._techItem_1lxj7_68 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 90px;
+  padding: 10px;
+  background-color: var(--card-bg);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  transition: all .3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  justify-content: center;
+  border: 2px solid transparent;
+  margin: 0;
+}
+
+._techItem_1lxj7_68:hover {
+  border-color: var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-color), rgba(70,160,160,0.2));
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  z-index: 10;
+  position: relative;
+}
+
+/* icon (using Font Awesome) */
+._techIcon_1lxj7_103 {
+  font-size: 1.8rem; /* icon font-size */
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  color: var(--accent-color);
+  transition: transform .25s ease, filter .25s;
+}
+
+._techItem_1lxj7_68:hover ._techIcon_1lxj7_103 {
+  transform: scale(1.12);
+  filter: brightness(1.1);
+}
+
+._techTitle_1lxj7_116 {
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  white-space: nowrap;
+  margin-top: -6px;
+}
+
+/* pause on hover of entire track */
+._scrollTrack_1lxj7_59:hover { animation-play-state: paused; }
+
+@keyframes _scroll_1lxj7_40 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  ._scrollTrack_1lxj7_59 { animation-duration: 14s; gap: 1.2rem; }
+  ._techItem_1lxj7_68 { width: 68px; height: 68px; min-width: 68px; padding: 8px; }
+  ._techIcon_1lxj7_103 { font-size: 1.2rem; width: 28px; height: 28px; line-height:28px; }
+  ._techTitle_1lxj7_116 { font-size: 0.65rem; margin-top:-4px; }
+}
+
+@media (max-width: 480px) {
+  ._scrollTrack_1lxj7_59 { animation-duration: 11s; gap: .8rem; }
+  ._techItem_1lxj7_68 { width: 56px; height: 56px; }
+  ._techIcon_1lxj7_103 { font-size: 1rem; width: 24px; height: 24px; line-height:24px; }
+  ._techTitle_1lxj7_116 { font-size: 0.6rem; }
+}
+
+
+
 
 
 
