@@ -72,7 +72,7 @@ ul {
     
     position: relative;
     box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
-    overflow: hidden  /* ; مهم حتى لا تخرج الصورة خارج الإطار */
+    overflow: hidden  
     
 }
 
@@ -87,11 +87,11 @@ ul {
     position: absolute;
     inset: 0;
     
-    background-image: url("boumo.png");
+    background-image: url("src/boumo.png");
     background-size: cover;
     background-position: center;
     opacity: 50%;
-    filter: grayscale(100%); /* الآن سيؤثر على الصورة فقط */
+    filter: grayscale(100%); 
     
 }
 
@@ -133,6 +133,19 @@ ul {
     
     margin-bottom: 1.5rem;
 }
+
+.down-cv{
+    font-size: 1.2rem;
+    padding: 7px;
+    
+    border: 2px solid var(--accent-color);
+}
+.down-cv:hover {
+      box-shadow: 0 0 15px var(--accent-color);
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
 
 .tech-icons {
     display: flex;

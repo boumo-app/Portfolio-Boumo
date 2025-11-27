@@ -12,7 +12,7 @@
 
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo"><img src="mblogo1.png" alt="logo" width="50px" height="40px"><!--<span class="accent">/</span>--></div>
+            <div class="logo"><img src="src/mblogo1.png" alt="logo" width="50px" height="40px"><!--<span class="accent">/</span>--></div>
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#about">About</a></li>
@@ -39,6 +39,8 @@
             <div class="hero-text">
                 <h1><span class="accent">Hi, I'm</span> Morad BOUZGHIBA<span class="accent">.</span></h1>
                 <h2 class="role-title">FullStack Developer</h2>
+                <a href="src/Morad Bouzghiba - Full Stack Developpeur.pdf" class="down-cv" download ><i class="fa fa-download" aria-hidden="true"></i>&ensp;Resume</a>
+                
                 <!-- <div class="tech-icons">
                     <i class="fab fa-html5"></i>
                     <i class="fab fa-css3-alt"></i>
@@ -259,72 +261,32 @@
                         <p>Redesigned and customized mobile and web interfaces for existing applications.Improved UX, layout structure, and performance using JavaScript, JSON, and modern UI practices.</p>
                     </div>
                 </div>
+                <br>
+                <h2 class="section-title">Formation<span class="accent">.</span></h2>
+                <div class="exp-item">
+                    <div class="exp-date">2025 – Présent  </div>
+                    <div class="exp-details">
+                        <h3>JobinTech - ISEEM </h3>
+                        <p>Formation intensive axée sur les technologies modernes de développement web.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="formation" class="section formation-section">
+    <!-- <section id="formation" class="section formation-section">
         <div class="container">
             <h2 class="section-title">Formation<span class="accent">.</span></h2>
             
-            <div class="formation-list">
-                <div class="formation-item">
-                    <div class="course-info">
-                        <div class="icon-box purple"><i class="fab fa-figma"></i></div>
-                        <h4>UI / UX Design</h4>
+            <div class="exp-item">
+                <div class="exp-date">2025 – Présent  </div>
+                    <div class="exp-details">
+                        <h3>JobinTech - ISEEM </h3>
+                        <p>Formation intensive axée sur les technologies modernes de développement web.</p>
                     </div>
-                    <div class="course-meta">
-                        <span>Origamid</span>
-                        <span class="hours">17 hours</span>
-                    </div>
-                </div>
-                
-                <div class="formation-item">
-                    <div class="course-info">
-                        <div class="icon-box orange"><i class="fab fa-html5"></i></div>
-                        <h4>HTML & CSS</h4>
-                    </div>
-                    <div class="course-meta">
-                        <span>Origamid</span>
-                        <span class="hours">23 hours</span>
-                    </div>
-                </div>
-
-                <div class="formation-item">
-                    <div class="course-info">
-                        <div class="icon-box blue"><i class="fab fa-css3-alt"></i></div>
-                        <h4>CSS Flexbox & Grid</h4>
-                    </div>
-                    <div class="course-meta">
-                        <span>Origamid</span>
-                        <span class="hours">8 hours</span>
-                    </div>
-                </div>
-
-                <div class="formation-item">
-                    <div class="course-info">
-                        <div class="icon-box yellow"><i class="fab fa-js"></i></div>
-                        <h4>JavaScript</h4>
-                    </div>
-                    <div class="course-meta">
-                        <span>Origamid</span>
-                        <span class="hours">37 hours</span>
-                    </div>
-                </div>
-
-                 <div class="formation-item">
-                    <div class="course-info">
-                        <div class="icon-box orange-dark"><i class="fab fa-js-square"></i></div>
-                        <h4>Aprenda a Programar com JS, HTML e CSS</h4>
-                    </div>
-                    <div class="course-meta">
-                        <span>Rodrigo Branas</span>
-                        <span class="hours">12 hours</span>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section id="contact" class="section contact-section">
         <div class="container">
@@ -400,6 +362,23 @@
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
+</script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init("147oEQsrs2ow365LF"); 
+
+  document.getElementById("contact-form").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      emailjs.send("YOUR_SERVICE_ID", "template_49qa3ub", {
+          from_name: document.getElementById("name").value,
+          from_email: document.getElementById("email").value,
+          message: document.getElementById("message").value
+      }).then(
+          () => alert("تم إرسال رسالتك بنجاح!"),
+          (error) => alert("حدث خطأ: " + error)
+      );
+  });
 </script>
 
     <script src="script.js"></script>
